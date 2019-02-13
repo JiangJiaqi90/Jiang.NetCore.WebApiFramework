@@ -1,0 +1,7 @@
+{
+  "modules": [
+    {
+      "type": "Netson.HotelManage2.Service.Contract.ServiceModule, Netson.HotelManage2.Service" //业务模型注入
+    }
+  ]
+}

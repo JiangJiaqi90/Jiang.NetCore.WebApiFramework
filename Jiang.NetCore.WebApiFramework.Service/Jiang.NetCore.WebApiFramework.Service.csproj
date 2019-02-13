@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.UnitOfWork" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jiang.NetCore.WebApiFramework.Dal\Jiang.NetCore.WebApiFramework.Dal.csproj" />
+    <ProjectReference Include="..\Jiang.NetCore.WebApiFramework.Entity\Jiang.NetCore.WebApiFramework.Entity.csproj" />
+  </ItemGroup>
+
+</Project>
