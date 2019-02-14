@@ -1,6 +1,4 @@
-﻿using Netson.HotelManage2.Core.Util;
-using Netson.HotelManage2.Entity.Enum;
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

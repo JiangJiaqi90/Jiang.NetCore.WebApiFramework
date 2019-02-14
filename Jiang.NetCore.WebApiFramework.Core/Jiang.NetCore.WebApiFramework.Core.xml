@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jiang.NetCore.WebApiFramework.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Jiang.NetCore.WebApiFramework.BaseEntity`1">
+            <summary>
+            实体基类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.BaseEntity`1.Id">
+            <summary>
+            主键（新增是不需要添加）
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.BaseEntity`1.ModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.BaseEntity`1.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.CommonUtil">
+            <summary>
+            扩展工具类
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.CommonUtil.To32MD5(System.String)">
+            <summary>
+            32位md5加密
+            UTF-8编码
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.CommonUtil.HttpPost(System.String,System.String)">
+            <summary>
+            post提交
+            </summary>
+            <param name="url"></param>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.CommonUtil.Format(System.Decimal)">
+            <summary>
+            格式化decimal保留两位小数
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.GlobalParams">
+            <summary>
+            全局参数
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.GlobalParams.ConnectionString">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.GlobalParams.AttachmentBasePath">
+            <summary>
+            系统附件根目录
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.GlobalParams.SysAttachmentFileUrl">
+            <summary>
+            系统附件下载地址前缀
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.OperateResult`1">
+            <summary>
+            响应结果
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.OperateResult`1.Code">
+            <summary>
+            响应码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.OperateResult`1.Message">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.OperateResult`1.Content">
+            <summary>
+            响应内容
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.OperateResult`1.Ok(System.String,`0)">
+            <summary>
+            成功
+            </summary>
+            <param name="message"></param>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.OperateResult`1.Error(System.String,`0)">
+            <summary>
+            操作失败或报错
+            </summary>
+            <param name="message"></param>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.ResultCode">
+            <summary>
+            响应码
+            </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.ResultCode.OK">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.ResultCode.Error">
+            <summary>
+            失败
+            </summary>
+        </member>
+    </members>
+</doc>

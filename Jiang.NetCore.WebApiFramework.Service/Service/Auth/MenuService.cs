@@ -1,15 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
-
-
-
-using Netson.HotelManage2.Entity.View.Auth;
-using Netson.HotelManage2.Service.IService.Auth;
+using Jiang.NetCore.WebApiFramework;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using Netson.HotelManage2.Entity;
 
 namespace Jiang.NetCore.WebApiFramework
 {

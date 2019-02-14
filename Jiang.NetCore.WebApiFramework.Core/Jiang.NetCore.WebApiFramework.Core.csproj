@@ -4,4 +4,12 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\gitWorkSpace\github\Jiang.NetCore.WebApiFramework\Jiang.NetCore.WebApiFramework.Core\Jiang.NetCore.WebApiFramework.Core.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>D:\gitWorkSpace\github\Jiang.NetCore.WebApiFramework\Jiang.NetCore.WebApiFramework.Core\Jiang.NetCore.WebApiFramework.Core.xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>

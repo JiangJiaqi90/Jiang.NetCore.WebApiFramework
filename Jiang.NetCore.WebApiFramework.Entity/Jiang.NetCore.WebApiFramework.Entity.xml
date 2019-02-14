@@ -1,0 +1,1138 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jiang.NetCore.WebApiFramework.Entity</name>
+    </assembly>
+    <members>
+        <member name="T:Jiang.NetCore.WebApiFramework.AuthDepartmentParam">
+            <summary>
+            部门管理参数
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthDepartmentParam.Id">
+            <summary>
+            主键（新增不传，修改必须传）
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthDepartmentParam.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthDepartmentParam.Name">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthDepartmentParam.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthDepartmentParam.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthDepartmentParam.ToEntity">
+            <summary>
+            转实体
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.AuthFeatureParam">
+            <summary>
+            菜单功能项参数
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthFeatureParam.MenuId">
+            <summary>
+            菜单ID
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthFeatureParam.Features">
+            <summary>
+            功能项列表
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.FeatureParam">
+            <summary>
+            功能项参数
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.FeatureParam.Id">
+            <summary>
+            功能项Id (修改必传)
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.FeatureParam.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.FeatureParam.Name">
+            <summary>
+            功能项名称
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.FeatureParam.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.FeatureParam.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.FeatureParam.ToEntity">
+            <summary>
+            转实体
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.AuthJobParam">
+            <summary>
+            职位参数
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthJobParam.Id">
+            <summary>
+            主键（修改必传）
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthJobParam.DepartmentId">
+            <summary>
+            部门ID
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthJobParam.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthJobParam.Name">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthJobParam.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthJobParam.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthJobParam.ToEntity">
+            <summary>
+            转实体
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.AuthMenuParam">
+            <summary>
+            菜单参数
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthMenuParam.Id">
+            <summary>
+            Id：修改时必传
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthMenuParam.ParentId">
+            <summary>
+            父级菜单
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthMenuParam.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthMenuParam.Name">
+            <summary>
+            菜单名称
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthMenuParam.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthMenuParam.Url">
+            <summary>
+            url
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthMenuParam.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthMenuParam.MenuIcon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthMenuParam.ToEntity">
+            <summary>
+            转实体
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.AuthParam">
+            <summary>
+            权限参数
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthParam.Id">
+            <summary>
+            权限Id:修改时必传
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthParam.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthParam.Name">
+            <summary>
+            权限名称
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthParam.Url">
+            <summary>
+            URL
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthParam.ButtonId">
+            <summary>
+            按钮ID
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthParam.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthParam.ToEntity">
+            <summary>
+            转实体
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.AuthRoleParam">
+            <summary>
+            角色参数
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthRoleParam.Id">
+            <summary>
+            Id:修改时必传
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthRoleParam.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthRoleParam.Name">
+            <summary>
+            角色名称
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthRoleParam.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.AuthRoleParam.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthRoleParam.ToEntity">
+            <summary>
+            转实体 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.FeatureAuthParam">
+            <summary>
+            功能项绑定权限参数
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.FeatureAuthParam.FeatureId">
+            <summary>
+            功能项Id
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.FeatureAuthParam.Auths">
+            <summary>
+            权限列表
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.RoleBindFeaturesParam">
+            <summary>
+            角色绑定功能项参数
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.RoleBindFeaturesParam.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.RoleBindFeaturesParam.FeatureIds">
+            <summary>
+            功能项ID列表
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.RoleBindUsersParam">
+            <summary>
+            角色编订用户参数
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.RoleBindUsersParam.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.RoleBindUsersParam.UserIds">
+            <summary>
+            用户ID列表
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.UserBindRolesParam">
+            <summary>
+            用户绑定角色参数
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserBindRolesParam.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserBindRolesParam.RoleIds">
+            <summary>
+            角色ID列表
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.UserParam">
+            <summary>
+            员工参数
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserParam.Id">
+            <summary>
+            Id 修改时必传
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserParam.UserName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserParam.JobId">
+            <summary>
+            职位ID
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserParam.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserParam.RealName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserParam.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserParam.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserParam.IdCard">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserParam.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserParam.Telephone">
+            <summary>
+            座机
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserParam.Phone">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserParam.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserParam.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserParam.Type">
+            <summary>
+            员工类别
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.UserParam.ToEntity">
+            <summary>
+            转实体
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.UserUpdatePassword">
+            <summary>
+            用户修改自己密码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserUpdatePassword.OldPassword">
+            <summary>
+            旧密码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserUpdatePassword.NewPassword">
+            <summary>
+            新密码
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.UserFindPassword">
+            <summary>
+            找回密码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserFindPassword.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserFindPassword.Phone">
+            <summary>
+            手机
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserFindPassword.Code">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserFindPassword.Password">
+            <summary>
+            新密码
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.UserResetPassword">
+            <summary>
+            重置用户密码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserResetPassword.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.UserResetPassword.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.Auth_Auth">
+            <summary>
+            权限
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Auth.FeatureId">
+            <summary>
+            功能项Id
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Auth.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Auth.Name">
+            <summary>
+            权限名称
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Auth.Url">
+            <summary>
+            URL
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Auth.ButtonId">
+            <summary>
+            按钮ID
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Auth.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.Auth_Department">
+            <summary>
+            部门表
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Department.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Department.Name">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Department.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Department.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.Auth_Feature">
+            <summary>
+            功能项
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Feature.MenuId">
+            <summary>
+            菜单ID
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Feature.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Feature.Name">
+            <summary>
+            功能项名称
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Feature.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Feature.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.Auth_Job">
+            <summary>
+            职位
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Job.DepartmentId">
+            <summary>
+            部门ID
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Job.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Job.Name">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Job.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Job.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.VAuthJob">
+            <summary>
+            职位模型
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VAuthJob.DepartmentName">
+            <summary>
+            部门名称
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.Auth_Menu">
+            <summary>
+            菜单表
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Menu.ParentId">
+            <summary>
+            父级菜单
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Menu.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Menu.Name">
+            <summary>
+            菜单名称
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Menu.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Menu.Url">
+            <summary>
+            url
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Menu.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Menu.MenuIcon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.Auth_Role">
+            <summary>
+            角色表
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Role.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Role.Name">
+            <summary>
+            角色名称
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Role.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_Role.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.VAuthRole">
+            <summary>
+            角色页面模型
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VAuthRole.Selected">
+            <summary>
+            是否被选择
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.VAuthRole.#ctor">
+            <summary>
+            默认五参数构造器
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.VAuthRole.#ctor(Jiang.NetCore.WebApiFramework.Auth_Role)">
+            <summary>
+            构造器
+            </summary>
+            <param name="role"></param>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.Auth_RoleFeature">
+            <summary>
+            角色功能项关联
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_RoleFeature.FeatureId">
+            <summary>
+            功能项ID
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_RoleFeature.RoleId">
+            <summary>
+            角色Id
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.Auth_RoleUser">
+            <summary>
+            角色员工关联
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_RoleUser.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_RoleUser.RoleId">
+            <summary>
+            角色Id
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.Auth_User">
+            <summary>
+            用户表
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_User.UserName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_User.JobId">
+            <summary>
+            职位ID
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_User.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_User.RealName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_User.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_User.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_User.IdCard">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_User.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_User.Telephone">
+            <summary>
+            座机
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_User.Phone">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_User.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_User.Type">
+            <summary>
+            员工类别
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_User.IsFreeze">
+            <summary>
+            是否冻结
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_User.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.VUser">
+            <summary>
+            员工模型
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUser.DepartmentId">
+            <summary>
+            部门Id
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUser.DepartmentName">
+            <summary>
+            部门名称
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUser.JobName">
+            <summary>
+            职位名称
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.VUsers">
+            <summary>
+            员工模型
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.ModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.UserName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.JobId">
+            <summary>
+            职位ID
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.RealName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.IdCard">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.Telephone">
+            <summary>
+            座机
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.Phone">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.Type">
+            <summary>
+            员工类别
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.IsFreeze">
+            <summary>
+            是否冻结
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.DepartmentId">
+            <summary>
+            部门Id
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.DepartmentName">
+            <summary>
+            部门名称
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VUsers.JobName">
+            <summary>
+            职位名称
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.UserType">
+            <summary>
+            员工类型
+            </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.UserType.Default">
+            <summary>
+            默认
+            </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.UserType.Salesman">
+            <summary>
+            销售员
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.SexEnum">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.SexEnum.Unkown">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.SexEnum.Man">
+            <summary>
+            男人
+            </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.SexEnum.Woman">
+            <summary>
+            女人
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.Auth_UserLoginHistory">
+            <summary>
+            用户登录历史
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_UserLoginHistory.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_UserLoginHistory.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_UserLoginHistory.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Auth_UserLoginHistory.LogoutTime">
+            <summary>
+            注销时间
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.LoginState">
+            <summary>
+            登录状态
+            </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.LoginState.Login">
+            <summary>
+            登录
+            </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.LoginState.Logout">
+            <summary>
+            注销
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.Sys_OperateLog">
+            <summary>
+            操作日志
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Sys_OperateLog.UserId">
+            <summary>
+            操作员ID
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Sys_OperateLog.ClientIp">
+            <summary>
+            用户IP
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Sys_OperateLog.ServerIp">
+            <summary>
+            服务IP
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Sys_OperateLog.RequestType">
+            <summary>
+            请求方式
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Sys_OperateLog.Url">
+            <summary>
+            请求地址
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Sys_OperateLog.ControllerName">
+            <summary>
+            控制器名称
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Sys_OperateLog.ActionName">
+            <summary>
+            方法名
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Sys_OperateLog.ResponseCode">
+            <summary>
+            响应code
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Sys_OperateLog.ActionMemo">
+            <summary>
+            操作说明
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Sys_OperateLog.ResponseMessage">
+            <summary>
+            响应字符串
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.Sys_OperateLog.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.LoginUserModel">
+            <summary>
+            登录账户参数
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.LoginUserModel.User">
+            <summary>
+            用户信息
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.LoginUserModel.Roles">
+            <summary>
+            用户所属的角色
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.LoginUserModel.Auths">
+            <summary>
+            登录用户的权限项
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.LoginUserModel.Token">
+            <summary>
+            令牌
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.LoginViewModel">
+            <summary>
+            用户模型参数
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.LoginViewModel.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.LoginViewModel.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.MemeberLoginModel">
+            <summary>
+            会员登录模型
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.MemeberLoginModel.UserName">
+            <summary>
+            手机号/会员号
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.MemeberLoginModel.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.VAuthMenu">
+            <summary>
+            菜单页面模型
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VAuthMenu.ParentName">
+            <summary>
+            父级菜单名称
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VAuthMenu.ChildMenus">
+            <summary>
+            子菜单
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VAuthMenu.Features">
+            <summary>
+            关联的功能项列表
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.VAuthFeature">
+            <summary>
+            功能项视图模型
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.VAuthFeature.Selected">
+            <summary>
+            是否被某角色绑定
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.EntityExtentions">
+            <summary>
+            实体扩展方法
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.EntityExtentions.ToModel(Jiang.NetCore.WebApiFramework.Auth_Feature)">
+            <summary>
+            功能项实体转模型
+            </summary>
+            <param name="feature"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

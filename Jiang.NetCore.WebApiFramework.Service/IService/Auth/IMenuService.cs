@@ -1,12 +1,9 @@
 ﻿
-
-
-using Netson.HotelManage2.Entity.View.Auth;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Netson.HotelManage2.Service.IService.Auth
+namespace Jiang.NetCore.WebApiFramework
 {
     public interface IMenuService
     {

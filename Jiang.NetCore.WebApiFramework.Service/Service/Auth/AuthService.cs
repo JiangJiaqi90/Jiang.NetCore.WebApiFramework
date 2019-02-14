@@ -3,7 +3,7 @@
 
 
 
-using Netson.HotelManage2.Service.IService.Auth;
+using Jiang.NetCore.WebApiFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;

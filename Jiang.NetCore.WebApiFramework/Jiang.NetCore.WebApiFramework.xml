@@ -1,0 +1,380 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jiang.NetCore.WebApiFramework</name>
+    </assembly>
+    <members>
+        <member name="T:Jiang.NetCore.WebApiFramework.AuthController">
+            <summary>
+            权限管理
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.AuthDepartmentController">
+            <summary>
+            部门管理
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthDepartmentController.Post(Jiang.NetCore.WebApiFramework.AuthDepartmentParam)">
+            <summary>
+            添加部门
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthDepartmentController.Put(Jiang.NetCore.WebApiFramework.AuthDepartmentParam)">
+            <summary>
+            修改部门
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthDepartmentController.Delete(System.Guid)">
+            <summary>
+            删除部门
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthDepartmentController.Get(System.Guid)">
+            <summary>
+            获取单个部门
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthDepartmentController.GetAll">
+            <summary>
+            获取所有部门
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.AuthFeatureController">
+            <summary>
+            功能项管理
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthFeatureController.Update(Jiang.NetCore.WebApiFramework.AuthFeatureParam)">
+            <summary>
+            更新功能项
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthFeatureController.GetByMenuId(System.Guid)">
+            <summary>
+            根据菜单ID获取功能项
+            </summary>
+            <param name="menuId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.AuthJobController">
+            <summary>
+            职位管理
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthJobController.Get(System.Guid)">
+            <summary>
+            根据Id获取职位
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthJobController.Post(Jiang.NetCore.WebApiFramework.AuthJobParam)">
+            <summary>
+            添加职位
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthJobController.Put(Jiang.NetCore.WebApiFramework.AuthJobParam)">
+            <summary>
+            修改职位
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthJobController.Delete(System.Guid)">
+            <summary>
+            删除职位
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthJobController.GetAll">
+            <summary>
+            获取所有职位
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthJobController.GetByDepartment(System.Guid)">
+            <summary>
+            根据部门ID获取职位
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.AuthMenuController">
+            <summary>
+            菜单管理
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthMenuController.GetMenu">
+            <summary>
+            获取树形菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthMenuController.GetMenuAndFeatures(System.Guid)">
+            <summary>
+            获取树形菜单和关联的功能项
+            </summary>
+            <param name="roleId">角色Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthMenuController.GetAuthMenu">
+            <summary>
+            获取登录账户的权限菜单（树形）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthMenuController.Get(System.Guid)">
+            <summary>
+            获取单个菜单
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthMenuController.Post(Jiang.NetCore.WebApiFramework.AuthMenuParam)">
+            <summary>
+            添加菜单
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthMenuController.Put(Jiang.NetCore.WebApiFramework.AuthMenuParam)">
+            <summary>
+            修改菜单
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthMenuController.Delete(System.Guid)">
+            <summary>
+            删除菜单
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.AuthRoleController">
+            <summary>
+            角色管理
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.ApplicationExtentions.UseSwaggerInfo(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            配置swagger帮助页
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.JwtSettings.Issuer">
+            <summary>
+            token是谁颁发的
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.JwtSettings.Audience">
+            <summary>
+            给哪些客户端使用
+            </summary>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.JwtSettings.SecretKey">
+            <summary>
+            加密的key
+            </summary>
+        </member>
+        <!-- 对于成员“T:Jiang.NetCore.WebApiFramework.OperateLogAttribute”忽略有格式错误的 XML 注释 -->
+        <member name="F:Jiang.NetCore.WebApiFramework.OperateLogAttribute._action">
+            <summary>
+            操作名称
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.OperateLogAttribute.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="actionName">操作名称</param>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.ParamCheckActionFilter">
+            <summary>
+            参数校验过滤器
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.RouteConvention">
+            <summary>
+            全局路由前缀配置
+            </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.RouteConvention._centralPrefix">
+            <summary>
+            定义一个路由前缀变量
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.RouteConvention.#ctor(Microsoft.AspNetCore.Mvc.Routing.IRouteTemplateProvider)">
+            <summary>
+            调用时传入指定的路由前缀
+            </summary>
+            <param name="routeTemplateProvider"></param>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.MvcOptionsExtensions">
+            <summary>
+            全局路由扩展方法
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.MvcOptionsExtensions.UseCentralRoutePrefix(Microsoft.AspNetCore.Mvc.MvcOptions,Microsoft.AspNetCore.Mvc.Routing.IRouteTemplateProvider)">
+            <summary>
+            扩展方法
+            </summary>
+            <param name="opts"></param>
+            <param name="routeAttribute"></param>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.ServiceExtentions">
+            <summary>
+            扩展服务注册
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.ServiceExtentions.AddSwaggerHelp(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            添加swagger
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.Startup.ErrorEvent(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            生产环境异常处理
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Netson.HotelManage2.WebApi.UserController">
+            <summary>
+            账户管理
+            </summary>
+        </member>
+        <member name="M:Netson.HotelManage2.WebApi.UserController.Login(Jiang.NetCore.WebApiFramework.LoginViewModel)">
+            <summary>
+            登录
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Netson.HotelManage2.WebApi.UserController.Logout">
+            <summary>
+            注销
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Netson.HotelManage2.WebApi.UserController.GetUserTypes">
+            <summary>
+            获取员工类别
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Netson.HotelManage2.WebApi.UserController.GetSalesman">
+            <summary>
+            获取销售员
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Netson.HotelManage2.WebApi.UserController.Post(Jiang.NetCore.WebApiFramework.UserParam)">
+            <summary>
+            添加 员工
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Netson.HotelManage2.WebApi.UserController.Put(Jiang.NetCore.WebApiFramework.UserParam)">
+            <summary>
+            修改员工
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Netson.HotelManage2.WebApi.UserController.UpdatePwd(Jiang.NetCore.WebApiFramework.UserUpdatePassword)">
+            <summary>
+            修改密码
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Netson.HotelManage2.WebApi.UserController.ResetPwd(Jiang.NetCore.WebApiFramework.UserResetPassword)">
+            <summary>
+            重置密码
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Netson.HotelManage2.WebApi.UserController.FindPwd(Jiang.NetCore.WebApiFramework.UserFindPassword)">
+            <summary>
+            找回密码
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Netson.HotelManage2.WebApi.UserController.Delete(System.Guid)">
+            <summary>
+            删除员工
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Netson.HotelManage2.WebApi.UserController.Get(System.Guid)">
+            <summary>
+            根据Id查询员工
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Netson.HotelManage2.WebApi.UserController.GetPage(System.Int32,System.Int32,System.Nullable{System.Guid},System.Nullable{System.Guid},System.String,System.String)">
+            <summary>
+            分页查询员工
+            </summary>
+            <param name="pageSize">分页大小</param>
+            <param name="pageIndex">页码：从0开始</param>
+            <param name="userName">用户名</param>
+            <param name="realName">姓名</param>
+            <param name="departmentId">部门Id</param>
+            <param name="jobId">职位id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Netson.HotelManage2.WebApi.UserController.GetList(System.Nullable{System.Guid},System.Nullable{System.Guid},System.String,System.String)">
+            <summary>
+            查询房务排班员工
+            </summary>
+            <param name="userName">用户名</param>
+            <param name="realName">姓名</param>
+            <param name="departmentId">部门Id</param>
+            <param name="jobId">职位id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Netson.HotelManage2.WebApi.UserController.BindRoles(Jiang.NetCore.WebApiFramework.UserBindRolesParam)">
+            <summary>
+            用户绑定角色
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Netson.HotelManage2.WebApi.UserController.GetByRole(System.Guid)">
+            <summary>
+            根据角色获取用户
+            </summary>
+            <param name="roleId">角色ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Netson.HotelManage2.WebApi.UserController.GetCheckRoom">
+            <summary>
+            获取查房人员
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Netson.HotelManage2.WebApi.UserController.GetRecheckRoom">
+            <summary>
+            获取复审人员
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

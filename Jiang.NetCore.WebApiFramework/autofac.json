@@ -1,7 +1,7 @@
 {
   "modules": [
     {
-      "type": "Netson.HotelManage2.Service.Contract.ServiceModule, Netson.HotelManage2.Service" //业务模型注入
+      "type": "Jiang.NetCore.WebApiFramework.ServiceModule, Jiang.NetCore.WebApiFramework.Service" //业务模型注入(类，程序集)
     }
   ]
 }

@@ -3,13 +3,12 @@
 
 
 
-using Netson.HotelManage2.Service.IService.Auth;
+using Jiang.NetCore.WebApiFramework;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Linq.Expressions;
-using Netson.HotelManage2.Core.Util;
 using System.ComponentModel;
 
 namespace Jiang.NetCore.WebApiFramework
@@ -93,12 +92,12 @@ namespace Jiang.NetCore.WebApiFramework
             //验证码校验，
             //时间有效期验证--10分钟内
             var time = DateTime.Now.AddMinutes(-10);
-            var query = _db.Mem_CheckCode.Where(l => l.Phone == param.Phone && l.Code == param.Code && l.Type == Entity.SMSType.HMFindPassword && l.CreateTime >= time).OrderByDescending(l => l.CreateTime);
-            var code = query.FirstOrDefault();
-            if (code == null)
-            {
-                return OperateResult<Auth_User>.Error("验证码无效");
-            }
+            //var query = _db.Mem_CheckCode.Where(l => l.Phone == param.Phone && l.Code == param.Code && l.Type == Entity.SMSType.HMFindPassword && l.CreateTime >= time).OrderByDescending(l => l.CreateTime);
+            //var code = query.FirstOrDefault();
+            //if (code == null)
+            //{
+            //    return OperateResult<Auth_User>.Error("验证码无效");
+            //}
             //用户查找
             var user = _db.Auth_User.Where(l => l.UserName == param.UserName).FirstOrDefault();
             if (user == null)
@@ -322,15 +321,15 @@ namespace Jiang.NetCore.WebApiFramework
                              UserName = temp.UserName,
                              Type = temp.Type
                          }).Where(expression).ToList();
-            var user = (from use in _db.Steward_RowroomUser select use.UserId).ToList();
+            //var user = (from use in _db.Steward_RowroomUser select use.UserId).ToList();
 
-            foreach (var item in query)
-            {
-                if (!user.Contains(item.UserId))
-                {
-                    vUsers.Add(item);
-                }
-            }
+            //foreach (var item in query)
+            //{
+            //    if (!user.Contains(item.UserId))
+            //    {
+            //        vUsers.Add(item);
+            //    }
+            //}
 
             return vUsers;
         }

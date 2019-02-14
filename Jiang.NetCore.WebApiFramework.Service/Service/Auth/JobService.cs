@@ -1,9 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-
-
-
-using Netson.HotelManage2.Service.IService.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -79,7 +75,10 @@ namespace Jiang.NetCore.WebApiFramework
                         };
             return query.OrderBy(l=>l.Sort).ToList();
         }
-
+        public IEnumerable<Auth_Job> GetByDepartment(Guid id)
+        {
+            return _db.Auth_Job.Where(l => l.DepartmentId == id).ToList();
+        }
         public VAuthJob GetById(Guid id)
         {
             var query = from temp in _db.Auth_Job
