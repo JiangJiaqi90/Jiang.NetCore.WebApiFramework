@@ -9,6 +9,25 @@
             权限管理
             </summary>
         </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.AuthController._cache">
+            <summary>
+            缓存
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthController.Update(Jiang.NetCore.WebApiFramework.FeatureAuthParam)">
+            <summary>
+            更新功能项
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthController.GetByFeatureId(System.Guid)">
+            <summary>
+            根据功能项ID获取权限
+            </summary>
+            <param name="featureId"></param>
+            <returns></returns>
+        </member>
         <member name="T:Jiang.NetCore.WebApiFramework.AuthDepartmentController">
             <summary>
             部门管理
@@ -164,6 +183,69 @@
             <summary>
             角色管理
             </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.AuthRoleController._cache">
+            <summary>
+            缓存
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthRoleController.Get(System.Guid)">
+            <summary>
+            根据Id获取角色
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthRoleController.Post(Jiang.NetCore.WebApiFramework.AuthRoleParam)">
+            <summary>
+            添加角色
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthRoleController.Put(Jiang.NetCore.WebApiFramework.AuthRoleParam)">
+            <summary>
+            修改角色
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthRoleController.Delete(System.Guid)">
+            <summary>
+            删除角色
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthRoleController.GetByUser(System.Guid)">
+            <summary>
+            根据用户获取角色
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthRoleController.GetPage(System.Int32,System.Int32,System.String)">
+            <summary>
+            分页查询角色
+            </summary>
+            <param name="pageSize">分页大小</param>
+            <param name="pageIndex">页码：从0开始</param>
+            <param name="name">名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthRoleController.BindUsers(Jiang.NetCore.WebApiFramework.RoleBindUsersParam)">
+            <summary>
+            角色绑定用户
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.AuthRoleController.BindFeatures(Jiang.NetCore.WebApiFramework.RoleBindFeaturesParam)">
+            <summary>
+            角色绑定功能项
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
         </member>
         <member name="M:Jiang.NetCore.WebApiFramework.ApplicationExtentions.UseSwaggerInfo(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
             <summary>

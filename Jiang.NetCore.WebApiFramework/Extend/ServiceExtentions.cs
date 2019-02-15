@@ -70,8 +70,15 @@ namespace Jiang.NetCore.WebApiFramework
                             context.Response.Headers.Add("token", "true");
                         }
                         return Task.CompletedTask;
+                    },
+                    OnMessageReceived = context =>
+                    {
+                        var token = context.Request.Headers["token"];
+                        context.Token = token.FirstOrDefault();
+                        return Task.CompletedTask;
                     }
                 };
+                
             });
 
             //DI handler process function

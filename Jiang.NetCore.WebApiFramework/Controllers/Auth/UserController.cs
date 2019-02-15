@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Jiang.NetCore.WebApiFramework;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -43,23 +44,39 @@ namespace Netson.HotelManage2.WebApi
             if (result.Code == ResultCode.OK)
             {
                 var model = (LoginUserModel)(result.Content);
+                
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.SecretKey));
+
+                DateTime authTime = DateTime.UtcNow;
+                //DateTime expiresAt = authTime.AddMinutes(Convert.ToDouble(_configuration["Jwt:ExpireMinutes"]));
+
+                //将用户信息添加到 Claim 中
+                var identity = new ClaimsIdentity(JwtBearerDefaults.AuthenticationScheme);
+
                 var claims = new List<Claim> {
                     new Claim(ClaimTypes.Name, model.User.Id.ToString())
                 };
                 //添加角色
                 foreach (var role in model.Roles)
                 {
-                    claims.Add(new Claim(ClaimTypes.Role, role.Name));
+                    claims.Add(new Claim(ClaimTypes.Role, role.Code));
                 }
-                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.SecretKey));
-                var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-                var token = new JwtSecurityToken(
-                    _jwtSettings.Issuer,
-                    _jwtSettings.Audience,
-                    claims,
-                    DateTime.Now,
-                    DateTime.Now.AddMinutes(30),
-                    creds);
+                identity.AddClaims(claims);
+
+                //签发一个加密后的用户信息凭证，用来标识用户的身份
+                //_httpContextAccessor.HttpContext.SignInAsync(JwtBearerDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
+
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
+                    Subject = new ClaimsIdentity(claims),//创建声明信息
+                    Issuer = _jwtSettings.Issuer,//Jwt token 的签发者
+                    Audience = _jwtSettings.Audience,//Jwt token 的接收者
+                    //Expires = expiresAt,//过期时间
+                    SigningCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256)//创建 token
+                };
+
+                var token = tokenHandler.CreateToken(tokenDescriptor);
                 model.Token = new JwtSecurityTokenHandler().WriteToken(token);
                 result.Content = model;
                 return Json(result);

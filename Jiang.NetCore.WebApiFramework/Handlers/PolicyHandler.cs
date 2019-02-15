@@ -64,7 +64,7 @@ namespace Jiang.NetCore.WebApiFramework
                         var roleNames = httpContext.User.Claims.Where(c => c.Type == ClaimTypes.Role).Select(l => l.Value);
                         //当前用户角色
                         var allRoles = _cacheHelp.GetRoles();
-                        var roles = allRoles.Where(l => roleNames.Contains(l.Name)).ToList();
+                        var roles = allRoles.Where(l => roleNames.Contains(l.Code)).ToList();
                         if (roles.Count < 1)
                         {
                             context.Fail();
@@ -74,6 +74,7 @@ namespace Jiang.NetCore.WebApiFramework
                         //若为管理员，直接给权限
                         if (roles.Any(l => l.Code == "admin"))
                         {
+                            context.Succeed(requirement);
                             return;
                         }
                         //判断接口权限--角色接口权限
@@ -91,6 +92,7 @@ namespace Jiang.NetCore.WebApiFramework
                                 if (currentRoute.Contains(r))
                                 {
                                     //包含这个接口，则有权限
+                                    context.Succeed(requirement);
                                     return;
                                 }
                             }
@@ -98,6 +100,7 @@ namespace Jiang.NetCore.WebApiFramework
                             context.Fail();
                             return;
                         }
+                        context.Succeed(requirement);
                         return;//如果当前路由不在权限表里面视为有权限
                     }
                 }
