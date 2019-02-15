@@ -171,6 +171,56 @@
             </summary>
             <param name="app"></param>
         </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.CacheHelp">
+            <summary>
+            内存缓存
+            </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.CacheHelp._cache">
+            <summary>
+            缓存
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.CacheHelp.GetRoles">
+            <summary>
+            获取角色
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.CacheHelp.GetRoleFeatures">
+            <summary>
+            获取角色功能项 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.CacheHelp.GetAuths">
+            <summary>
+            获取所有权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.CacheHelp.GetAuthByRoleIds(System.Collections.Generic.List{System.Guid})">
+            <summary>
+            根据角色ID获取关联的权限
+            </summary>
+            <param name="roleIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.CacheHelp.UpdateRoleFeatureCache">
+            <summary>
+            更新角色功能关联
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.CacheHelp.UpdateRoleCache">
+            <summary>
+            更新角色缓存
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.CacheHelp.UpdateAuthCache">
+            <summary>
+            更新权限缓存
+            </summary>
+        </member>
         <member name="P:Jiang.NetCore.WebApiFramework.JwtSettings.Issuer">
             <summary>
             token是谁颁发的
@@ -184,6 +234,31 @@
         <member name="P:Jiang.NetCore.WebApiFramework.JwtSettings.SecretKey">
             <summary>
             加密的key
+            </summary>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.MyMemoryCache">
+            <summary>
+            内存缓存
+            </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.MyMemoryCache.RoleCacheKey">
+            <summary>
+            角色缓存key
+            </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.MyMemoryCache.RoleFeatureCacheKey">
+            <summary>
+            角色功能项关联缓存Key
+            </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.MyMemoryCache.AuthCacheKey">
+            <summary>
+            权限缓存key
+            </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.MyMemoryCache.CacheTimeSpan">
+            <summary>
+            缓存时间
             </summary>
         </member>
         <!-- 对于成员“T:Jiang.NetCore.WebApiFramework.OperateLogAttribute”忽略有格式错误的 XML 注释 -->
@@ -241,6 +316,25 @@
             添加swagger
             </summary>
             <param name="services"></param>
+        </member>
+        <member name="P:Jiang.NetCore.WebApiFramework.PolicyHandler.Schemes">
+            <summary>
+            授权方式（cookie, bearer, oauth, openid）
+            </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.PolicyHandler._cache">
+            <summary>
+            缓存
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.PolicyHandler.#ctor(Microsoft.AspNetCore.Authentication.IAuthenticationSchemeProvider,Jiang.NetCore.WebApiFramework.MyMemoryCache,Jiang.NetCore.WebApiFramework.CacheHelp,Microsoft.Extensions.Logging.ILogger{Jiang.NetCore.WebApiFramework.PolicyHandler})">
+            <summary>
+            
+            </summary>
+            <param name="schemes"></param>
+            <param name="memoryCache"></param>
+            <param name="cacheHelp"></param>
+            <param name="logger"></param>
         </member>
         <member name="M:Jiang.NetCore.WebApiFramework.Startup.ErrorEvent(Microsoft.AspNetCore.Http.HttpContext)">
             <summary>

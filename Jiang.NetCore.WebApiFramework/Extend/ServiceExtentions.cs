@@ -24,45 +24,61 @@ namespace Jiang.NetCore.WebApiFramework
     /// </summary>
     public static class ServiceExtentions
     {
-        //public static void AddJwt(this IServiceCollection services, IConfiguration Configuration)
-        //{
-        //    //将appsettings.json中的JwtSettings部分文件读取到JwtSettings中，这是给其他地方用的
-        //    services.Configure<JwtSettings>(Configuration.GetSection("JwtSettings"));
+        public static void AddJwt(this IServiceCollection services, IConfiguration Configuration)
+        {
+            #region Configure Jwt Authentication
+            //将appsettings.json中的JwtSettings部分文件读取到JwtSettings中，这是给其他地方用的
+            services.Configure<JwtSettings>(Configuration.GetSection("JwtSettings"));
 
-        //    //由于初始化的时候我们就需要用，所以使用Bind的方式读取配置
-        //    //将配置绑定到JwtSettings实例中
-        //    var jwtSettings = new JwtSettings();
-        //    Configuration.Bind("JwtSettings", jwtSettings);
+            //由于初始化的时候我们就需要用，所以使用Bind的方式读取配置
+            //将配置绑定到JwtSettings实例中
+            var jwtSettings = new JwtSettings();
+            Configuration.Bind("JwtSettings", jwtSettings);
+            //Use Jwt bearer authentication
+            //TimeSpan expiration = TimeSpan.FromMinutes(Convert.ToDouble(expire));
+            SecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.SecretKey));
 
-        //    services.AddAuthentication(options => {
-        //        //认证middleware配置
-        //        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-        //        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-        //    })
-        //    .AddJwtBearer(config =>
-        //    {
-        //        config.SecurityTokenValidators.Clear();
-        //        var provider = services.BuildServiceProvider();
-        //        //取当前上下文
-        //        object factory = provider.GetService(typeof(Microsoft.AspNetCore.Http.IHttpContextAccessor));
+            services.AddAuthorization(options =>
+            {
+                //1、Definition authorization policy
+                options.AddPolicy("Permission",
+                   policy => policy.Requirements.Add(new PolicyRequirement()));
+            }).AddAuthentication(s =>
+            {
+                //2、Authentication
+                s.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                s.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                s.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(s =>
+            {
+                //3、Use Jwt bearer 
+                s.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidIssuer = jwtSettings.Issuer,
+                    ValidAudience = jwtSettings.Audience,
+                    IssuerSigningKey = key,
+                    //ClockSkew = expiration,
+                    ValidateLifetime = true
+                };
+                s.Events = new JwtBearerEvents
+                {
+                    OnAuthenticationFailed = context =>
+                    {
+                        //Token expired
+                        if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
+                        {
+                            context.Response.Headers.Add("token", "true");
+                        }
+                        return Task.CompletedTask;
+                    }
+                };
+            });
 
-        //        var httpcontext = ((IHttpContextAccessor)factory).HttpContext;
-        //        config.SecurityTokenValidators.Add(new MyTokenValidate(provider.GetRequiredService<MyMemoryCache>(), 
-        //            provider.GetRequiredService<CacheHelp>(), httpcontext,provider.GetRequiredService<ILogger<MyTokenValidate>>()));
-        //        config.Events = new JwtBearerEvents()
-        //        {
-        //            OnMessageReceived = context =>
-        //            {
-        //                var token = context.Request.Headers["token"];
-        //                context.Token = token.FirstOrDefault();
-        //                return Task.CompletedTask;
-        //            }
+            //DI handler process function
+            services.AddSingleton<IAuthorizationHandler, PolicyHandler>();
 
-        //        };
-        //    });
-        //    //添加自定义权限访问claims
-        //    services.AddAuthorization(options => options.AddPolicy("hotelManage", policy => policy.RequireClaim("hotelManage")));
-        //}
+            #endregion
+        }
         /// <summary>
         /// 添加swagger
         /// </summary>

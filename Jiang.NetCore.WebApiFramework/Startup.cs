@@ -63,14 +63,14 @@ namespace Jiang.NetCore.WebApiFramework
             //});
             
             services.AddUnitOfWork<ManageContext>();//添加UnitOfWork支持
-            //services.AddSingleton<MyMemoryCache>();//添加缓存
+            services.AddSingleton<MyMemoryCache>();//添加缓存
             //添加jwt
-            //services.AddJwt(Configuration);
+            services.AddJwt(Configuration);
             //依赖注入
             //services.AddScoped(typeof(ISignalrAction), typeof(SignalrAction));
             services.AddScoped(typeof(IRoleService), typeof(RoleService));
             services.AddScoped(typeof(IAuthService), typeof(AuthService));
-            //services.AddScoped<CacheHelp>();
+            services.AddScoped<CacheHelp>();
             services.AddMvc(opt =>
             {
                 //全局路由前缀

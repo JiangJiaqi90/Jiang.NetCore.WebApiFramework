@@ -43,11 +43,14 @@ namespace Netson.HotelManage2.WebApi
             if (result.Code == ResultCode.OK)
             {
                 var model = (LoginUserModel)(result.Content);
-                var rolestr = string.Join(',', model.Roles.Select(l => l.Id));
-                var claims = new Claim[] {
-                    new Claim(ClaimTypes.Name, model.User.Id.ToString()),
-                    new Claim(ClaimTypes.Role, rolestr)
+                var claims = new List<Claim> {
+                    new Claim(ClaimTypes.Name, model.User.Id.ToString())
                 };
+                //添加角色
+                foreach (var role in model.Roles)
+                {
+                    claims.Add(new Claim(ClaimTypes.Role, role.Name));
+                }
                 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.SecretKey));
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
                 var token = new JwtSecurityToken(

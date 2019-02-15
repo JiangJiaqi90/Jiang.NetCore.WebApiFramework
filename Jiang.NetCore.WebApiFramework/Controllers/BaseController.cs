@@ -10,11 +10,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace Jiang.NetCore.WebApiFramework
 {
     [Route("api/[controller]/[action]")]
-    #if DEBUG
-        //[Authorize(Policy = "hotelManage")]//--仅发布版本身份验证
-    #else
-        [Authorize(Policy = "hotelManage")]
-    #endif
+#if DEBUG
+    [Authorize(Policy = "Permission")]//--仅发布版本身份验证
+#else
+        [Authorize(Policy = "Permission")]
+#endif
     public abstract class BaseController : Controller
     {
         
