@@ -67,7 +67,7 @@ namespace Jiang.NetCore.WebApiFramework
             //添加jwt
             services.AddJwt(Configuration);
             //依赖注入
-            //services.AddScoped(typeof(ISignalrAction), typeof(SignalrAction));
+            services.AddScoped(typeof(ISignalrAction), typeof(SignalrAction));
             services.AddScoped<CacheHelp>();
             services.AddMvc(opt =>
             {
@@ -129,10 +129,10 @@ namespace Jiang.NetCore.WebApiFramework
             // 套用 Policy 到 Middleware()
             app.UseCors("CorsPolicy");//此代码是作用于全局,每个controller和action自动允许跨域
 
-            //app.UseSignalR(routes =>
-            //{
-            //    routes.MapHub<SignalrHubs>("/signalrHubs");
-            //});
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<SignalrHubs>("/signalrHubs");
+            });
             app.UseWebSockets();
             app.UseSwaggerInfo();
             app.UseAuthentication();
