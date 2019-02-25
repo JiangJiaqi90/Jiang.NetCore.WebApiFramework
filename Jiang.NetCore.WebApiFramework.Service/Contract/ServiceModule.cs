@@ -14,9 +14,6 @@ namespace Jiang.NetCore.WebApiFramework
         {
             builder.RegisterAssemblyTypes(this.ThisAssembly)
                 .Where(t => t.Name.EndsWith("Service")
-                    &&!t.Name.EndsWith("RoleService")//排除RoleService放在原生依赖注入
-                    && !t.Name.EndsWith("AuthService")//排除AuthService放在原生依赖注入
-                    //&& !t.Name.EndsWith("HangfireMessageService")//排除AuthService放在原生依赖注入
                 )
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope();

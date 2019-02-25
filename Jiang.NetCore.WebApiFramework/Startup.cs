@@ -68,8 +68,6 @@ namespace Jiang.NetCore.WebApiFramework
             services.AddJwt(Configuration);
             //依赖注入
             //services.AddScoped(typeof(ISignalrAction), typeof(SignalrAction));
-            services.AddScoped(typeof(IRoleService), typeof(RoleService));
-            services.AddScoped(typeof(IAuthService), typeof(AuthService));
             services.AddScoped<CacheHelp>();
             services.AddMvc(opt =>
             {
