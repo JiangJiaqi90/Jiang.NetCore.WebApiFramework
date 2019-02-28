@@ -365,7 +365,7 @@
             日志业务
             </summary>
         </member>
-        <member name="M:Jiang.NetCore.WebApiFramework.OperateLogAttribute.#ctor(Jiang.NetCore.WebApiFramework.CacheHelp,Jiang.NetCore.WebApiFramework.ISysOperateLogService)">
+        <member name="M:Jiang.NetCore.WebApiFramework.OperateLogAttribute.#ctor(Jiang.NetCore.WebApiFramework.CacheHelp,Jiang.NetCore.WebApiFramework.ISysOperateLogService,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
             <summary>
             构造函数
             </summary>

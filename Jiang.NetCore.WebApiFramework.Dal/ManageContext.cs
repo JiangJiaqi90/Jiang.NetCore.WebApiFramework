@@ -7,9 +7,7 @@ namespace Jiang.NetCore.WebApiFramework
     {
         public ManageContext() : base()
         {
-            doConn = true;
         }
-        private bool doConn = false;
         //https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/complex-data-model
         public ManageContext(DbContextOptions<ManageContext> options) : base(options)
         {
@@ -17,8 +15,6 @@ namespace Jiang.NetCore.WebApiFramework
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (doConn)
-                optionsBuilder.UseMySql(GlobalParams.ConnectionString);
             base.OnConfiguring(optionsBuilder);
         }
 

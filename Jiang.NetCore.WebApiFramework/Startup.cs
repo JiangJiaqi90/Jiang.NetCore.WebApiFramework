@@ -31,9 +31,6 @@ namespace Jiang.NetCore.WebApiFramework
                 .AddJsonFile("autofac.json")
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
-            GlobalParams.ConnectionString = Configuration.GetConnectionString("MySqlConnection");
-            //GlobalParams.AttachmentBasePath = Configuration.GetSection("AppSetting:AttachmentPath").Value;
-            //GlobalParams.SysAttachmentFileUrl = Configuration.GetSection("AppSetting:SysAttachmentFileUrl").Value;
         }
 
         public IConfiguration Configuration { get; }
@@ -70,6 +67,7 @@ namespace Jiang.NetCore.WebApiFramework
             services.AddScoped(typeof(ISignalrAction), typeof(SignalrAction));
             services.AddScoped<CacheHelp>();
             services.AddScoped<OperateLogAttribute>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddMvc(opt =>
             {
                 //全局路由前缀

@@ -58,21 +58,6 @@
             全局参数
             </summary>
         </member>
-        <member name="P:Jiang.NetCore.WebApiFramework.GlobalParams.ConnectionString">
-            <summary>
-            连接字符串
-            </summary>
-        </member>
-        <member name="P:Jiang.NetCore.WebApiFramework.GlobalParams.AttachmentBasePath">
-            <summary>
-            系统附件根目录
-            </summary>
-        </member>
-        <member name="P:Jiang.NetCore.WebApiFramework.GlobalParams.SysAttachmentFileUrl">
-            <summary>
-            系统附件下载地址前缀
-            </summary>
-        </member>
         <member name="T:Jiang.NetCore.WebApiFramework.OperateResult`1">
             <summary>
             响应结果

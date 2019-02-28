@@ -1,4 +1,5 @@
 ﻿using Jiang.NetCore.WebApiFramework;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
@@ -22,33 +23,44 @@ namespace Jiang.NetCore.WebApiFramework
         /// 日志业务
         /// </summary>
         private ISysOperateLogService _logService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <param name="cacheHelp">缓存</param>
         /// <param name="logService">日志逻辑</param>
-        public OperateLogAttribute(CacheHelp cacheHelp, ISysOperateLogService logService)
+        public OperateLogAttribute(CacheHelp cacheHelp, ISysOperateLogService logService, IHttpContextAccessor httpContextAccessor)
         {
             _cacheHelp = cacheHelp;
             _logService = logService;
+            _httpContextAccessor = httpContextAccessor;
         }
         public override void OnActionExecuted(ActionExecutedContext context)
         {
             try
             {
                 base.OnActionExecuted(context);
-                var str = context.ToString();
-
                 //请求IP
                 var ip = context.HttpContext.Request.Host.Host;
                 var result = context.Result;
+                var clientIp = _httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString();
+                var index = clientIp.LastIndexOf(":");
+                if (index >= 0)
+                {
+                    clientIp = clientIp.Substring(index + 1);
+                    if (clientIp == "1")
+                    {
+                        clientIp = "127.0.0.1";
+                    }
+                }
                 var log = new Sys_OperateLog()
                 {
                     ServerIp = ip,
                     Id = Guid.NewGuid(),
                     Url = $"{context.HttpContext.Request.Scheme}://{ip}{context.HttpContext.Request.Path.Value}",
                     ModifyTime = DateTime.Now,
-                    RequestType = context.HttpContext.Request.Method
+                    RequestType = context.HttpContext.Request.Method,
+                    ClientIp =  clientIp
                 };
                 if (typeof(Controller).IsAssignableFrom(context.Controller.GetType()))
                 {
