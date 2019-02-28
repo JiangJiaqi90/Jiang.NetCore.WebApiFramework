@@ -281,6 +281,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.CacheHelp.GetActionDictionary">
+            <summary>
+            获取接口描述字典
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Jiang.NetCore.WebApiFramework.CacheHelp.GetAuthByRoleIds(System.Collections.Generic.List{System.Guid})">
             <summary>
             根据角色ID获取关联的权限
@@ -343,17 +349,28 @@
             缓存时间
             </summary>
         </member>
-        <!-- 对于成员“T:Jiang.NetCore.WebApiFramework.OperateLogAttribute”忽略有格式错误的 XML 注释 -->
-        <member name="F:Jiang.NetCore.WebApiFramework.OperateLogAttribute._action">
+        <member name="F:Jiang.NetCore.WebApiFramework.MyMemoryCache.ActionDictionary">
             <summary>
-            操作名称
+            接口方法描述字典
             </summary>
         </member>
-        <member name="M:Jiang.NetCore.WebApiFramework.OperateLogAttribute.#ctor(System.String)">
+        <!-- 对于成员“T:Jiang.NetCore.WebApiFramework.OperateLogAttribute”忽略有格式错误的 XML 注释 -->
+        <member name="F:Jiang.NetCore.WebApiFramework.OperateLogAttribute._cacheHelp">
+            <summary>
+            缓存
+            </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.OperateLogAttribute._logService">
+            <summary>
+            日志业务
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.OperateLogAttribute.#ctor(Jiang.NetCore.WebApiFramework.CacheHelp,Jiang.NetCore.WebApiFramework.ISysOperateLogService)">
             <summary>
             构造函数
             </summary>
-            <param name="actionName">操作名称</param>
+            <param name="cacheHelp">缓存</param>
+            <param name="logService">日志逻辑</param>
         </member>
         <member name="T:Jiang.NetCore.WebApiFramework.ParamCheckActionFilter">
             <summary>
@@ -393,11 +410,24 @@
             扩展服务注册
             </summary>
         </member>
-        <member name="M:Jiang.NetCore.WebApiFramework.ServiceExtentions.AddSwaggerHelp(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+        <member name="M:Jiang.NetCore.WebApiFramework.ServiceExtentions.AddSwaggerHelp(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             添加swagger
             </summary>
             <param name="services"></param>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.XmlExtention">
+            <summary>
+            xml扩展
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.XmlExtention.GetActionDescription(System.String)">
+            <summary>
+            从控制器方法xml文档中获取方法的xml注释，构建字典key:controler_action,value:description
+            注意：该xml文档必须是自动生成的控制器方法的标准格式
+            </summary>
+            <param name="xmlFile">xml文件路径</param>
+            <returns></returns>
         </member>
         <member name="P:Jiang.NetCore.WebApiFramework.PolicyHandler.Schemes">
             <summary>
@@ -417,6 +447,34 @@
             <param name="memoryCache"></param>
             <param name="cacheHelp"></param>
             <param name="logger"></param>
+        </member>
+        <member name="T:Jiang.NetCore.WebApiFramework.SignalrAction">
+            <summary>
+            实时通信操作
+            </summary>
+        </member>
+        <member name="F:Jiang.NetCore.WebApiFramework.SignalrAction._hubContext">
+            <summary>
+            实时推送集线器上下文
+            </summary>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.SignalrAction.UpdateRoomState(System.Object)">
+            <summary>
+            实时更新房态
+            </summary>
+            <param name="obj">实时房态数据</param>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.SignalrAction.UpdateMessage(System.Object)">
+            <summary>
+            实时更新消息
+            </summary>
+            <param name="obj">消息数据</param>
+        </member>
+        <member name="M:Jiang.NetCore.WebApiFramework.SignalrAction.UpdateNANightAudit(System.Object)">
+            <summary>
+            夜审
+            </summary>
+            <param name="obj">消息数据</param>
         </member>
         <member name="M:Jiang.NetCore.WebApiFramework.Startup.ErrorEvent(Microsoft.AspNetCore.Http.HttpContext)">
             <summary>

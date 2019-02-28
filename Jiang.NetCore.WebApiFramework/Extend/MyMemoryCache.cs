@@ -35,5 +35,10 @@ namespace Jiang.NetCore.WebApiFramework
         /// 缓存时间
         /// </summary>
         public static TimeSpan CacheTimeSpan = TimeSpan.FromDays(1);
+        /// <summary>
+        /// 接口方法描述字典
+        /// </summary>
+
+        public const string ActionDictionary = "actiondictionnary";
     }
 }

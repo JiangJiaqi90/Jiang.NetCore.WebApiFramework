@@ -66,8 +66,11 @@ namespace Jiang.NetCore.WebApiFramework
         public DbSet<Auth_UserLoginHistory> Auth_UserLoginHistory { get; set; }
 
         #endregion
+        /// <summary>
+        /// 操作日志
+        /// </summary>
+        public DbSet<Sys_OperateLog> Sys_OperateLog { get; set; }
 
-        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

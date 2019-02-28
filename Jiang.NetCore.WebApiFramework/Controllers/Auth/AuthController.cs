@@ -32,7 +32,7 @@ namespace Jiang.NetCore.WebApiFramework
         /// <param name="param"></param>
         /// <returns></returns>
         [HttpPost]
-        [OperateLog("更新权限")]
+        [ServiceFilter(typeof(OperateLogAttribute))]
         public ActionResult<OperateResult<IEnumerable<Auth_Auth>>> Update([FromBody]FeatureAuthParam param)
         {
             var result = Json(_service.Update(param));

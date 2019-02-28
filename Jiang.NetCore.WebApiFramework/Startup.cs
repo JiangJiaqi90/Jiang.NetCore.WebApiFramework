@@ -69,6 +69,7 @@ namespace Jiang.NetCore.WebApiFramework
             //依赖注入
             services.AddScoped(typeof(ISignalrAction), typeof(SignalrAction));
             services.AddScoped<CacheHelp>();
+            services.AddScoped<OperateLogAttribute>();
             services.AddMvc(opt =>
             {
                 //全局路由前缀
@@ -89,7 +90,7 @@ namespace Jiang.NetCore.WebApiFramework
            }));
 
             // Register the Swagger services
-            services.AddSwaggerHelp();
+            services.AddSwaggerHelp(Configuration);
 
             services.AddRouting();
             var builder = new ContainerBuilder();
@@ -98,10 +99,9 @@ namespace Jiang.NetCore.WebApiFramework
             builder.RegisterModule(module);
             //属性注入
             this.Container = builder.Build();
-
-
-
-            return new AutofacServiceProvider(this.Container);
+            var provider = new AutofacServiceProvider(this.Container);
+            provider.GetRequiredService<CacheHelp>().GetActionDictionary();//初始化长时间的缓存
+            return provider;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

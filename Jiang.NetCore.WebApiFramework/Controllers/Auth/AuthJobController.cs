@@ -35,7 +35,7 @@ namespace Jiang.NetCore.WebApiFramework
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        [OperateLog("添加职位")]
+        [ServiceFilter(typeof(OperateLogAttribute))]
         [HttpPost]
         public ActionResult<OperateResult<Auth_Job>> Post([FromBody]AuthJobParam value)
         {
@@ -48,7 +48,7 @@ namespace Jiang.NetCore.WebApiFramework
         /// <param name="value"></param>
         /// <returns></returns>
         [HttpPut]
-        [OperateLog("修改职位")]
+        [ServiceFilter(typeof(OperateLogAttribute))]
         public ActionResult<OperateResult<Auth_Job>> Put([FromBody]AuthJobParam value)
         {
             return Json(_service.Update(value));
@@ -59,7 +59,7 @@ namespace Jiang.NetCore.WebApiFramework
         /// </summary>
         /// <param name="id"></param>
         [HttpDelete("{id}")]
-        [OperateLog("删除职位")]
+        [ServiceFilter(typeof(OperateLogAttribute))]
         public ActionResult<OperateResult<Auth_Job>> Delete(Guid id)
         {
             return Json(_service.Delete(id));

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Jiang.NetCore.WebApiFramework;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;
@@ -14,16 +15,22 @@ namespace Jiang.NetCore.WebApiFramework
     public class OperateLogAttribute : ActionFilterAttribute
     {
         /// <summary>
-        /// 操作名称
+        /// 缓存
         /// </summary>
-        private readonly string _action;
+        private CacheHelp _cacheHelp;
+        /// <summary>
+        /// 日志业务
+        /// </summary>
+        private ISysOperateLogService _logService;
         /// <summary>
         /// 构造函数
         /// </summary>
-        /// <param name="actionName">操作名称</param>
-        public OperateLogAttribute(string actionName)
+        /// <param name="cacheHelp">缓存</param>
+        /// <param name="logService">日志逻辑</param>
+        public OperateLogAttribute(CacheHelp cacheHelp, ISysOperateLogService logService)
         {
-            _action = actionName;
+            _cacheHelp = cacheHelp;
+            _logService = logService;
         }
         public override void OnActionExecuted(ActionExecutedContext context)
         {
@@ -31,7 +38,7 @@ namespace Jiang.NetCore.WebApiFramework
             {
                 base.OnActionExecuted(context);
                 var str = context.ToString();
-                
+
                 //请求IP
                 var ip = context.HttpContext.Request.Host.Host;
                 var result = context.Result;
@@ -41,14 +48,20 @@ namespace Jiang.NetCore.WebApiFramework
                     Id = Guid.NewGuid(),
                     Url = $"{context.HttpContext.Request.Scheme}://{ip}{context.HttpContext.Request.Path.Value}",
                     ModifyTime = DateTime.Now,
-                    ActionMemo=_action
-                    
+                    RequestType = context.HttpContext.Request.Method
                 };
                 if (typeof(Controller).IsAssignableFrom(context.Controller.GetType()))
                 {
                     var controller = (Controller)context.Controller;
                     log.ControllerName = controller.ControllerContext.ActionDescriptor.ControllerName;
-                    log.RequestType = controller.ControllerContext.ActionDescriptor.ActionName;
+                    log.ActionName = controller.ControllerContext.ActionDescriptor.ActionName;
+                    //获取方法描述
+                    var key = $"{log.ControllerName}_{log.ActionName}";
+                    var dic = _cacheHelp.GetActionDictionary();
+                    if (dic.ContainsKey(key))
+                    {
+                        log.ActionMemo = dic[key];
+                    }
                 }
                 var resultType = result.GetType();
                 object operateResult = resultType.GetProperty("Value").GetValue(result, null);
@@ -82,20 +95,20 @@ namespace Jiang.NetCore.WebApiFramework
                     //用户ID
                     var userIdstr = context.HttpContext.User.Identity.Name;
                     Guid userid;
-                    if(Guid.TryParse(userIdstr,out userid))
+                    if (Guid.TryParse(userIdstr, out userid))
                     {
                         log.UserId = userid;
                     }
                     //写入数据库
-                    //LogManager.WriteLog(log);
+                    _logService.Add(log);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 NLogHelp.ErrorLog(ex);
             }
-            
+
         }
-        
+
     }
 }

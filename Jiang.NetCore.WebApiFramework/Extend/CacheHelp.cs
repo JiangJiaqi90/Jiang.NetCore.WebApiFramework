@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +18,13 @@ namespace Jiang.NetCore.WebApiFramework
         private MemoryCache _cache;
         private IRoleService _roleService;
         private IAuthService _authService;
-        public CacheHelp(MyMemoryCache memoryCache, IRoleService roleService, IAuthService authService)
+        private readonly IConfiguration _configuration;
+        public CacheHelp(MyMemoryCache memoryCache, IRoleService roleService, IAuthService authService, IConfiguration configuration)
         {
             _cache = memoryCache.Cache;
             _roleService = roleService;
             _authService = authService;
+            _configuration = configuration;
         }
         /// <summary>
         /// 获取角色
@@ -57,6 +60,18 @@ namespace Jiang.NetCore.WebApiFramework
             {
                 entry.SlidingExpiration = MyMemoryCache.CacheTimeSpan;
                 return _authService.GetAll();
+            });
+        }
+        /// <summary>
+        /// 获取接口描述字典
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, string> GetActionDictionary()
+        {
+            return _cache.GetOrCreate(MyMemoryCache.ActionDictionary, entry =>
+            {
+                entry.SlidingExpiration = TimeSpan.MaxValue;
+                return _configuration.GetSection("AppSetting:webApiXmlFile").Value.GetActionDescription();
             });
         }
         /// <summary>

@@ -90,7 +90,7 @@ namespace Jiang.NetCore.WebApiFramework
         /// 添加swagger
         /// </summary>
         /// <param name="services"></param>
-        public static void AddSwaggerHelp(this IServiceCollection services)
+        public static void AddSwaggerHelp(this IServiceCollection services, IConfiguration Configuration)
         {
             services.AddSwaggerGen(c =>
             {
@@ -104,7 +104,7 @@ namespace Jiang.NetCore.WebApiFramework
                 });
                 //添加读取注释服务
                 var basePath = PlatformServices.Default.Application.ApplicationBasePath;
-                var xmlPath = Path.Combine(basePath, "Jiang.NetCore.WebApiFramework.xml");
+                var xmlPath = Path.Combine(basePath, Configuration.GetSection("AppSetting:webApiXmlFile").Value);
                 var entityXmlPath = Path.Combine(basePath, "Jiang.NetCore.WebApiFramework.Entity.xml");
                 var coreXmlPath = Path.Combine(basePath, "Jiang.NetCore.WebApiFramework.Core.xml");
                 c.IncludeXmlComments(entityXmlPath);

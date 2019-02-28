@@ -119,7 +119,7 @@ namespace Netson.HotelManage2.WebApi
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        [OperateLog("添加员工")]
+        [ServiceFilter(typeof(OperateLogAttribute))]
         [HttpPost]
         public ActionResult<OperateResult<Auth_User>> Post([FromBody]UserParam param)
         {
@@ -130,7 +130,7 @@ namespace Netson.HotelManage2.WebApi
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        [OperateLog("修改员工")]
+        [ServiceFilter(typeof(OperateLogAttribute))]
         [HttpPut]
         public ActionResult<OperateResult<Auth_User>> Put([FromBody]UserParam param)
         {
@@ -141,7 +141,7 @@ namespace Netson.HotelManage2.WebApi
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        [OperateLog("修改密码")]
+        [ServiceFilter(typeof(OperateLogAttribute))]
         [HttpPut]
         public ActionResult<OperateResult<Auth_User>> UpdatePwd([FromBody]UserUpdatePassword param)
         {
@@ -153,7 +153,7 @@ namespace Netson.HotelManage2.WebApi
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        [OperateLog("重置密码")]
+        [ServiceFilter(typeof(OperateLogAttribute))]
         [HttpPut]
         public ActionResult<OperateResult<Auth_User>> ResetPwd([FromBody]UserResetPassword param)
         {
@@ -175,7 +175,7 @@ namespace Netson.HotelManage2.WebApi
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [OperateLog("删除员工")]
+        [ServiceFilter(typeof(OperateLogAttribute))]
         [HttpDelete("{id}")]
         public ActionResult<OperateResult<Auth_User>> Delete(Guid id)
         {

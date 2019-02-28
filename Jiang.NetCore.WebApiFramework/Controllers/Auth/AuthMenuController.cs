@@ -63,7 +63,7 @@ namespace Jiang.NetCore.WebApiFramework
         /// </summary>
         /// <param name="value"></param>
         [HttpPost]
-        [OperateLog("添加菜单")]
+        [ServiceFilter(typeof(OperateLogAttribute))]
         public ActionResult<OperateResult<Auth_Menu>> Post([FromBody]AuthMenuParam value)
         {
             return Json(_service.Add(value));
@@ -75,7 +75,7 @@ namespace Jiang.NetCore.WebApiFramework
         /// <param name="value"></param>
         /// <returns></returns>
         [HttpPut]
-        [OperateLog("修改菜单")]
+        [ServiceFilter(typeof(OperateLogAttribute))]
         public ActionResult<OperateResult<Auth_Menu>> Put([FromBody]AuthMenuParam value)
         {
             return Json(_service.Update(value));
@@ -86,7 +86,7 @@ namespace Jiang.NetCore.WebApiFramework
         /// </summary>
         /// <param name="id"></param>
         [HttpDelete("{id}")]
-        [OperateLog("删除菜单")]
+        [ServiceFilter(typeof(OperateLogAttribute))]
         public ActionResult<OperateResult<Auth_Menu>> Delete(Guid id)
         {
             return Json(_service.Delete(id));
